@@ -1,0 +1,685 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Chandelier rules</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(249, 228, 188, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="47cc0d0b-f22e-4eea-a3a8-a2ce65d20f07" class="page serif"><header><h1 class="page-title">Chandelier rules</h1><p class="page-description"></p></header><div class="page-body"><nav id="8284c3f0-702d-4106-83ff-011c85c6a231" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#035f533c-4e97-4573-9c16-dbd3190fa3aa">Preliminary</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#54e8f5d3-4a73-478a-8aae-a8b42299e9a3">Definitions</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#87c67a9f-1e1d-4e8f-89c6-baa67a33b307">Game setup</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#0d881f19-c4d3-4716-920d-441cda104e26">The course of the game</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#0c1747e3-4d67-4f3e-b448-c7e2292e968b">The course of the final</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#ab2b7f1b-1953-4625-8bb6-6036299fd46e">Important rules</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#7084ccc0-b9c1-493c-8be8-a1eb9f0440a4">Puking</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#8bb23342-65c3-4648-b053-e6c7711d534d">Leaving the table</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#7d1d19f4-6435-4ae4-8cce-5904a85e3b61">Breaks</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#43b1118a-00ff-43dd-9485-a07f04a3c1da">Drinks on the table</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#0545d984-59ad-46bc-9240-81c2febd52c3">Spilling while drinking</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#1c1beb4a-6e38-4cad-b37d-1ad14d16b320">Two players finishing their flip simultaneously</a></div></nav><h2 id="035f533c-4e97-4573-9c16-dbd3190fa3aa" class="">Preliminary</h2><p id="4b6535cc-9ae2-4a15-9828-c330fa69c631" class="">Chandelier is a drinking game where you will most likely get really drunk. The objective of the game is to be the last man standing, and the way you do that is usually by having the strongest willpower. Your choice of drink should be beer. It is frowned upon (and by default illegal) to drink cider or seltzer as it reduces the difficulty. During the game, you may not go to the restroom, take any breaks or leave the table for any reason. If you leave the table, you are Out of the game.</p><h2 id="54e8f5d3-4a73-478a-8aae-a8b42299e9a3" class="">Definitions</h2><ul id="6b0c19bc-768b-4543-a46b-127490c79822" class="toggle"><li><details><summary>Accepted Drink</summary><p id="9876693e-04d1-4cd9-85ca-be6538051217" class="">The only drink that is accepted by default is beer.</p><p id="339ba804-d639-4b95-aca5-3c7a691e453a" class="">If beer cannot be used due to dietary or practical restrictions, the group can choose to accept other drinks. If so, the drink should resemble beer in terms of:</p><ol type="i" id="342bf3de-7ed8-4622-b2eb-a404dd226059" class="numbered-list" start="1"><li>Alcohol level</li></ol><ol type="i" id="3c59afff-9d2c-43d9-baa0-c768046ed408" class="numbered-list" start="2"><li>How sparkling the drink is</li></ol><ol type="i" id="19bcd6bf-dcfe-4c79-bd89-73a2569a6998" class="numbered-list" start="3"><li>How filling the drink is</li></ol><p id="1caeb557-9b10-40e5-9ff5-42a455474145" class="">Some alternative drinks that can be accepted (in order of acceptability) are:</p><ol type="1" id="88e6bb93-2fd3-4a88-bb15-ba8b205f88f2" class="numbered-list" start="1"><li>Spritz (50/50 mix of wine and sparkling water)</li></ol><ol type="1" id="d4a7b708-ee96-49f2-83db-1ea6eb4f764e" class="numbered-list" start="2"><li>Cider</li></ol><ol type="1" id="6dc2f04d-48e6-4d5d-b415-d36022b6234f" class="numbered-list" start="3"><li>Other drinks with similar properties as beer (level of gas, alcohol, and how filling it is)</li></ol><ol type="1" id="022515be-4c8e-41bd-a5f8-37a3e3c301aa" class="numbered-list" start="4"><li>Hard seltzer</li></ol><ol type="1" id="6162579c-5b8e-4ee2-b7d8-a31c955ddad8" class="numbered-list" start="5"><li>Other drinks, if the group chooses to accept them</li></ol><p id="bb68f586-3e9d-403f-b0bf-f8d255b76383" class="">If there is a shortage of beer, then all the available beer <strong><strong><strong><strong>must</strong></strong></strong></strong> be consumed before moving on to alternatives. It is <strong>not </strong>allowed to use a less acceptable alternative if a more acceptable alternative is available (e.g. you cannot drink Hard Seltzer if Cider is available).</p></details></li></ul><ul id="a0822e96-5876-4abe-b86e-c416a9fd14a1" class="toggle"><li><details><summary>Active Player</summary><p id="650efd1a-cbcb-4cc1-9fea-daf1d73cb765" class="">The Active Player in any given round is the person throwing the Ping-Pong ball in the beginning of the round.</p></details></li></ul><ul id="106406f5-f601-42e0-8a82-da2c7d8ba5d6" class="toggle"><li><details><summary>Agreed-Upon Amount</summary><p id="b824c2f1-8d92-43e2-a270-4f8b3c86ad1c" class="">The amount of Accepted Drink the group has decided that each player should have in their cup before any round starts. This amount is decided by consensus and can be increased later in the game. This will be further explained later.</p></details></li></ul><ul id="b142ca92-dfbf-4bc7-b56c-943ad37177c1" class="toggle"><li><details><summary>Out</summary><p id="fd7bf2c1-92e2-48cf-b10d-18b8929beb0f" class="">A player being Out means that they cannot continue the game without buying in.</p></details></li></ul><ul id="972fde9a-613b-414d-860d-24c402f397f8" class="toggle"><li><details><summary>Permanently Out</summary><p id="945175cd-8911-44a2-835a-a53fa559184d" class="">A player who is Permanently Out does not have the option to buy in.</p></details></li></ul><ul id="ed0c3482-7526-44aa-9eec-53762ee0d4e9" class="toggle"><li><details><summary>Successful Flip</summary><p id="81de8458-7183-414e-87cf-c02bb5b68660" class="">A Successful Flip of a cup is any flip where:</p><ol type="i" id="efae36c4-5a6d-458c-b155-dbe1977821c4" class="numbered-list" start="1"><li>The player flipping does not touch the cup before flipping, i.e. the cup stands by itself on the table. The cup can be placed in an upright or upside-down position.</li></ol><ol type="i" id="6b23bd88-f5e4-4742-82a1-284df121bcae" class="numbered-list" start="2"><li>The player used only one finger to flip it.</li></ol><ol type="i" id="54e6d37a-79ac-4a41-b2be-99d96bdcdfcc" class="numbered-list" start="3"><li>The cup lands in a stable position (either upright or upside down).</li></ol></details></li></ul><ul id="5bbff6fc-7f95-4742-b9f8-6846cd66f71f" class="toggle"><li><details><summary>Waiting For Buy-Ins</summary><p id="cb1113dd-5839-479a-8dea-6e7d31ffff7d" class="">The group has to decide whether or not they are waiting for buy-ins, i.e. whether the game is paused while someone is buying in or not.</p><p id="df9988cf-4b1f-48fb-a429-bad506e13113" class="">In large games (8+ players) it is possible to start out by not Waiting For Buy-Ins, and then begin Waiting For Buy-Ins once the number of players is reduced.</p></details></li></ul><h2 id="87c67a9f-1e1d-4e8f-89c6-baa67a33b307" class="">Game setup</h2><div id="5e36407c-896b-48fb-a41d-2e071b17c33b" class="column-list"><div id="b98fe105-a4f9-4a16-b2a7-b71e1846fa67" style="width:56.25%" class="column"><ol type="1" id="6df774c3-bdb4-4c33-8cfc-1556c0310c96" class="numbered-list" start="1"><li>Put one cup upside down in the middle of the table.</li></ol><ol type="1" id="4b97d526-6045-4c78-8365-5f1a8443d666" class="numbered-list" start="2"><li>Fill another cup with water and place it on top of the upside-down cup.</li></ol><ol type="1" id="f7a39d6e-1fdd-48ce-b565-38712ffe98fc" class="numbered-list" start="3"><li>Give each player a personal cup.</li></ol><ol type="1" id="5286a3e1-b71c-4dfd-b54d-2e03a0ebbe9f" class="numbered-list" start="4"><li>Reach a consensus within the group on how much each personal cup should be filled up. This will henceforth be referred to as the <strong>Agreed-Upon Amount</strong>.</li></ol><ol type="1" id="16055a5d-6890-4c06-add6-c824d426615c" class="numbered-list" start="5"><li>Each player should then fill their cup with the Agreed-Upon Amount of an Accepted Drink.</li></ol><ol type="1" id="b3056681-6f72-4a1b-baab-43edbaf42565" class="numbered-list" start="6"><li>The group must pick a player to go first (an Active Player). If no consensus is reached, the most experienced player should start.</li></ol></div><div id="68a349a9-5a0f-44df-ac72-7781d8cff082" style="width:43.75%" class="column"><figure id="347c2274-372d-4d9a-8253-0618c4983ec2" class="image"><a href="./files/chandelier.svg"><img style="width:289.625px" src="./files/chandelier.svg"></a></figure></div></div><p id="a92220ab-d0d6-4bf0-837a-6b245189b4f6" class="">Because it is illegal to leave the table during the game, all players should get enough alcohol to last the entire game. If you are planning to win, it is normally recommendable to have around 6 half-liters of beer, but this depends on the competition.</p><p id="6c22805f-ceb5-49a6-9a7f-3b800fdd53d5" class="">It is also recommendable to go to the toilet before starting, as it is illegal to leave the table during the game.</p><h2 id="0d881f19-c4d3-4716-920d-441cda104e26" class="">The course of the game</h2><p id="1009a5fc-f545-4779-beec-8fb69fffe59d" class="">Each round progresses in the following way:</p><ol type="1" id="13cbf25b-45d6-4dd8-8958-519068843b06" class="numbered-list" start="1"><li>The Active Player throws the ping-pong ball. <strong>NB</strong>: The ball must hit the table before hitting any cup.</li></ol><ol type="1" id="d88941f1-4c07-4f5e-b2a6-451517dce5a4" class="numbered-list" start="2"><li>What happens next depends on where the ball hits:<ol type="a" id="cfe8045b-9980-49cc-b6ce-396060eae98b" class="numbered-list" start="1"><li>If the ball did not hit any cup, the round is over, and the ball is passed clockwise to the next player.</li></ol><ol type="a" id="37c54ef9-c4a5-41c8-b5ea-e0b9f66212b3" class="numbered-list" start="2"><li>If the ball hit the cup in the middle, everyone except the Active Player drinks whatever is in their cup. After drinking, they flip their cup, and the last one to perform a Successful Flip is Out.</li></ol><ol type="a" id="9274dd3c-e713-41aa-9a33-21ee76d80c85" class="numbered-list" start="3"><li>If the ball hit the Active Player’s cup, the Active Player has to drink his cup, and then he is Out.</li></ol><ol type="a" id="fafcbcbe-c05c-470e-9149-9abae4d71daa" class="numbered-list" start="4"><li>If the ball hit another player’s cup, there is a duel between the Active Player and the player whose cup was hit. Both players drink, flip, and the last one to perform a Successful Flip is Out.</li></ol></li></ol><ol type="1" id="ed6361d6-16a4-47b3-ac64-576b9aef672b" class="numbered-list" start="3"><li>Any player who is Out then has the option to buy in. A buy-in is performed by drinking <strong>twice</strong> the Agreed-Upon Amount. There is no limit to the number of times a person can buy in. If the person chooses not to buy in, they are Permanently Out.<ol type="a" id="46dd2bb4-4e98-4092-9526-f6e024556c37" class="numbered-list" start="1"><li>If the group is Waiting For Buy-Ins, the person buying in must chug while the others wait. After chugging, everyone makes sure to have the Agreed-Upon Amount in their cup, the ball is passed clockwise to the next player, and the next round starts (back to point 1.)</li></ol><ol type="a" id="2caa2c85-83b7-47c9-8cbe-4db82388877c" class="numbered-list" start="2"><li>If the group is not Waiting For Buy-Ins, the other players make sure to have the Agreed-Upon Amount in their cup, the ball is passed clockwise to the next player, and the next round starts without the person buying in (back to point 1.)  The person buying in is not considered a player as long as he is buying in.<ol type="i" id="101b47c6-7605-4868-8ed9-1aafac1f2aa8" class="numbered-list" start="1"><li>However, this does not mean he can drink as slowly as he wants. He must still chug, and if he spends an unreasonable amount of time, the buy-in is considered invalid, and the player is Permanently Out. Normally, an unreasonable amount of time is defined as the ping-pong ball doing a full round around the table.</li></ol></li></ol></li></ol><p id="b7ac303c-03ba-4e2a-81d8-ed2435307b82" class="">This continues until there are only two players left. </p><p id="0e2f2dbf-7c28-4f8f-a5ec-195731e51c0c" class="">If everyone is able to buy in, and few people go Permanently Out, the Agreed-Upon Amount should be increased. Some players might suggest that the number of buy-ins should be reduced, but that is <strong>not</strong> a valid way to modify the game, as it completely changes the nature of the game. If the number of buy-ins are limited, it is no longer a game of Chandelier, but a game of Bitchelier. Bitchelier can be fun as well, but is a completely different game.</p><h3 id="0c1747e3-4d67-4f3e-b448-c7e2292e968b" class="">The course of the final</h3><p id="2b093e62-b757-4495-8b68-6308fba0c5ca" class="">When only two players are left, the final begins. Before starting the final, the two players is the final should decide whether or not to allow buy-ins in the final. By default, buy-ins in the final are <strong><strong><strong>not</strong></strong></strong> allowed, but if both players want to allow it, it is allowed.</p><p id="22a186af-25e2-432e-bca7-07e1a8f7caad" class="">The final is slightly different from a normal round:</p><ol type="1" id="263a7807-6ef1-457c-9a3d-31e921b17dbe" class="numbered-list" start="1"><li>The Active Player throws the ball in the same way as before.</li></ol><ol type="1" id="0bc8b547-5c0b-4942-af4d-d038ebf3041a" class="numbered-list" start="2"><li>What happens next depends on where the ball hits:<ol type="a" id="88ba3644-2bbf-455a-b995-9b33ad55c11e" class="numbered-list" start="1"><li>If the Active Player hits the cup in the middle, the Active Player can drink his cup as slowly as he wants, and the other player cannot start drinking until the Active Player is done drinking. After drinking, each player flips, and the last person to flip is Out. The Active Player can start flipping before the other player is done drinking, and therefore has an advantage.</li></ol><ol type="a" id="ee2fb32d-a941-4fc8-b7d1-54964566d820" class="numbered-list" start="2"><li>If the Active Player hits the other player’s cup, it is a normal duel.</li></ol><ol type="a" id="6ac0e10f-8bb1-456b-9f31-dc2be7778bc1" class="numbered-list" start="3"><li>If the Active Player hits his own cup, he has to drink it, and then he is Out, unless he is able to flip the cup on the first try.</li></ol><ol type="a" id="f48af320-caca-4515-b8aa-5fb92db2dbc7" class="numbered-list" start="4"><li>If no cup is hit, the next round of the final begins.</li></ol></li></ol><ol type="1" id="a011fb9e-9c69-4db9-b4c8-cd057aee5533" class="numbered-list" start="3"><li>If the two players agreed to allow buy-ins, a buy-in can be performed, and another round of the final can begin.</li></ol><h2 id="ab2b7f1b-1953-4625-8bb6-6036299fd46e" class="">Important rules</h2><h3 id="7084ccc0-b9c1-493c-8be8-a1eb9f0440a4" class="">Puking</h3><p id="aab18ce8-9f78-4191-ac87-6c5fabf2c5f2" class="">Any player who pukes is Out, and has to perform <strong>two</strong> buy-ins to rejoin the game (i.e. four times the Agreed-Upon Amount).</p><h3 id="8bb23342-65c3-4648-b053-e6c7711d534d" class="">Leaving the table</h3><p id="5f44e90f-fb83-49dd-9f11-a3f7a4886e49" class="">Any player who leaves the table is Out. If he is back at the table within a reasonable amount of time, he is allowed to buy in again. A reasonable amount of time is usually defined as a couple of minutes.</p><p id="70250050-a277-4c27-a401-22ab601fe04c" class="">If there is reason to suspect that the player was puking while away from the table, he has to perform a double buy-in if he wants to rejoin the game (i.e. four times the Agreed-Upon Amount).</p><p id="7ec19677-30f3-42e3-a2d4-bb8909da159c" class="">If no-one throws the ping-pong ball while the player was away from the table, he is allowed to rejoin without any buy-in. This can happen if the group was filling their cups or waiting for someone to buy in while the player was away.</p><p id="c952eff7-6f6a-478b-aed3-2a67abc6abf0" class=""> If a player is away from the table for more than a reasonable amount of time, he is Permanently Out, and cannot buy in again.</p><p id="0348c2e2-860d-482a-8459-d50e6545c6d0" class="">If someone needs to leave the table for important practical reasons, the group can grant them permission to leave. That must happen before the person leaves.</p><p id="693d902c-e023-4b3f-a6e0-4a6521b4c652" class="">Getting more to drink is not considered an important practical reason. You should bring enough beers to the table before starting the game. If you miscalculated, it is recommendable to ask a non-player to fetch more beers for you. Make sure to do this before you run out.</p><h3 id="7d1d19f4-6435-4ae4-8cce-5904a85e3b61" class="">Breaks</h3><p id="7ae3dd36-7233-4da4-a1da-902f973f03a7" class="">Chandelier is a game without any breaks. No player is allowed to ask for a break.</p><h3 id="43b1118a-00ff-43dd-9485-a07f04a3c1da" class="">Drinks on the table</h3><p id="2a6628e9-68e4-49e4-900b-584f25a17250" class="">Placing cans of beer or any other objects on the table is not allowed. The only things that should be on the table are the cups.</p><h3 id="0545d984-59ad-46bc-9240-81c2febd52c3" class="">Spilling while drinking</h3><p id="0a0ff14c-a04b-4bb4-9c24-3541525f5e36" class="">Spilling is normally not considered cheating because the gain from spilling some centiliters is very small, and it is practically unavoidable when drinking fast.</p><p id="838c9098-d860-4c7b-961c-88aa405b2997" class="">If a player spills unreasonable amounts, he should get a warning.</p><p id="2d5627b4-24a9-41d3-9225-a07fedf55bb5" class="">If someone continuously spills a large portion of their drink, that is considered cheating.</p><p id="9a0fcebe-a940-4147-b295-cf5af214f4f2" class="">The bar for “large portion” is generally very high. It has to give the spiller a <strong>significant</strong> competitive advantage.</p><p id="7e3da265-f5e3-411f-a29b-3e4dc8d08986" class="">If someone spills unreasonably:</p><ul id="84875368-6600-40b5-b29b-e69e5ddb48e6" class="bulleted-list"><li style="list-style-type:disc">Their drinking is not accepted.</li></ul><ul id="1a26f5ef-5ee6-4e58-8df1-832c65455d27" class="bulleted-list"><li style="list-style-type:disc">They have to refill their cup with the Agreed-Upon Amount and redrink it.</li></ul><ul id="a417e996-8551-4c94-9846-ac07087bd0b6" class="bulleted-list"><li style="list-style-type:disc">If the other players are done, the spiller is Out, and is offered to buy in.</li></ul><h3 id="1c1beb4a-6e38-4cad-b37d-1ad14d16b320" class="">Two players finishing their flip simultaneously</h3><p id="9ec255c1-9241-42c2-8a64-0d155ca9dc46" class="">If two players finish their flip simultaneously and the group cannot tell who was first, they must have a normal duel to settle it:</p><ol type="1" id="8dcbcbbb-c84c-48e4-bff7-18b19134e98a" class="numbered-list" start="1"><li>Each player fills their cup with the Agreed-Upon Amount.</li></ol><ol type="1" id="39ffc485-a9ba-4c9a-ac67-14ef4e85e534" class="numbered-list" start="2"><li>Once both players are ready, the group counts down from three.</li></ol><ol type="1" id="c56bff46-708a-4be5-bcb3-b47c1f10ba8b" class="numbered-list" start="3"><li>Both players drink their cup, flip it, and the last person to flip is Out.</li></ol><p id="12e9c1de-adab-404b-a441-8c31f94852ab" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
