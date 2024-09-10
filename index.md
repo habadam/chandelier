@@ -6,55 +6,76 @@ Chandelier is a drinking game where you will most likely get really drunk. The o
 
 ## Definitions
 
-- Accepted Drink
-    
+<details>
+<summary>Accepted Drink</summary>
+
     The only drink that is accepted by default is beer.
-    
+
     If beer cannot be used due to dietary or practical restrictions, the group can choose to accept other drinks. If so, the drink should resemble beer in terms of:
-    
+
     1. Alcohol level
     2. How sparkling the drink is
     3. How filling the drink is
-    
+
     Some alternative drinks that can be accepted (in order of acceptability) are:
-    
+
     1. Spritz (50/50 mix of wine and sparkling water)
     2. Cider
     3. Other drinks with similar properties as beer (level of gas, alcohol, and how filling it is)
     4. Hard seltzer
     5. Other drinks, if the group chooses to accept them
-    
+
     If there is a shortage of beer, then all the available beer **must** be consumed before moving on to alternatives. It is **not** allowed to use a less acceptable alternative if a more acceptable alternative is available (e.g. you cannot drink Hard Seltzer if Cider is available).
-    
-- Active Player
-    
+
+</details>
+
+<details>
+<summary>Active Player</summary>
+
     The Active Player in any given round is the person throwing the Ping-Pong ball in the beginning of the round.
-    
-- Agreed-Upon Amount
-    
+
+</details>
+
+<details>
+<summary>Agreed-Upon Amount</summary>
+
     The amount of Accepted Drink the group has decided that each player should have in their cup before any round starts. This amount is decided by consensus and can be increased later in the game. This will be further explained later.
-    
-- Out
-    
+
+</details>
+
+<details>
+<summary>Out</summary>
+
     A player being Out means that they cannot continue the game without buying in.
-    
-- Permanently Out
-    
+
+</details>
+
+<details>
+<summary>Permanently Out</summary>
+
     A player who is Permanently Out does not have the option to buy in.
-    
-- Successful Flip
-    
+
+</details>
+
+<details>
+<summary>Successful Flip</summary>
+
     A Successful Flip of a cup is any flip where:
-    
+
     1. The player flipping does not touch the cup before flipping, i.e. the cup stands by itself on the table. The cup can be placed in an upright or upside-down position.
     2. The player used only one finger to flip it.
     3. The cup lands in a stable position (either upright or upside down).
-- Waiting For Buy-Ins
-    
+
+</details>
+
+<details>
+<summary>Waiting For Buy-Ins</summary>
+
     The group has to decide whether or not they are waiting for buy-ins, i.e. whether the game is paused while someone is buying in or not.
-    
+
     In large games (8+ players) it is possible to start out by not Waiting For Buy-Ins, and then begin Waiting For Buy-Ins once the number of players is reduced.
-    
+
+</details>
 
 ## Game setup
 
@@ -77,16 +98,16 @@ Each round progresses in the following way:
 
 1. The Active Player throws the ping-pong ball. **NB**: The ball must hit the table before hitting any cup.
 2. What happens next depends on where the ball hits:
-    1. If the ball did not hit any cup, the round is over, and the ball is passed clockwise to the next player.
-    2. If the ball hit the cup in the middle, everyone except the Active Player drinks whatever is in their cup. After drinking, they flip their cup, and the last one to perform a Successful Flip is Out.
-    3. If the ball hit the Active Player’s cup, the Active Player has to drink his cup, and then he is Out.
-    4. If the ball hit another player’s cup, there is a duel between the Active Player and the player whose cup was hit. Both players drink, flip, and the last one to perform a Successful Flip is Out.
+   1. If the ball did not hit any cup, the round is over, and the ball is passed clockwise to the next player.
+   2. If the ball hit the cup in the middle, everyone except the Active Player drinks whatever is in their cup. After drinking, they flip their cup, and the last one to perform a Successful Flip is Out.
+   3. If the ball hit the Active Player’s cup, the Active Player has to drink his cup, and then he is Out.
+   4. If the ball hit another player’s cup, there is a duel between the Active Player and the player whose cup was hit. Both players drink, flip, and the last one to perform a Successful Flip is Out.
 3. Any player who is Out then has the option to buy in. A buy-in is performed by drinking **twice** the Agreed-Upon Amount. There is no limit to the number of times a person can buy in. If the person chooses not to buy in, they are Permanently Out.
-    1. If the group is Waiting For Buy-Ins, the person buying in must chug while the others wait. After chugging, everyone makes sure to have the Agreed-Upon Amount in their cup, the ball is passed clockwise to the next player, and the next round starts (back to point 1.)
-    2. If the group is not Waiting For Buy-Ins, the other players make sure to have the Agreed-Upon Amount in their cup, the ball is passed clockwise to the next player, and the next round starts without the person buying in (back to point 1.)  The person buying in is not considered a player as long as he is buying in.
-        1. However, this does not mean he can drink as slowly as he wants. He must still chug, and if he spends an unreasonable amount of time, the buy-in is considered invalid, and the player is Permanently Out. Normally, an unreasonable amount of time is defined as the ping-pong ball doing a full round around the table.
+   1. If the group is Waiting For Buy-Ins, the person buying in must chug while the others wait. After chugging, everyone makes sure to have the Agreed-Upon Amount in their cup, the ball is passed clockwise to the next player, and the next round starts (back to point 1.)
+   2. If the group is not Waiting For Buy-Ins, the other players make sure to have the Agreed-Upon Amount in their cup, the ball is passed clockwise to the next player, and the next round starts without the person buying in (back to point 1.) The person buying in is not considered a player as long as he is buying in.
+      1. However, this does not mean he can drink as slowly as he wants. He must still chug, and if he spends an unreasonable amount of time, the buy-in is considered invalid, and the player is Permanently Out. Normally, an unreasonable amount of time is defined as the ping-pong ball doing a full round around the table.
 
-This continues until there are only two players left. 
+This continues until there are only two players left.
 
 If everyone is able to buy in, and few people go Permanently Out, the Agreed-Upon Amount should be increased. Some players might suggest that the number of buy-ins should be reduced, but that is **not** a valid way to modify the game, as it completely changes the nature of the game. If the number of buy-ins are limited, it is no longer a game of Chandelier, but a game of Bitchelier. Bitchelier can be fun as well, but is a completely different game.
 
@@ -98,10 +119,10 @@ The final is slightly different from a normal round:
 
 1. The Active Player throws the ball in the same way as before.
 2. What happens next depends on where the ball hits:
-    1. If the Active Player hits the cup in the middle, the Active Player can drink his cup as slowly as he wants, and the other player cannot start drinking until the Active Player is done drinking. After drinking, each player flips, and the last person to flip is Out. The Active Player can start flipping before the other player is done drinking, and therefore has an advantage.
-    2. If the Active Player hits the other player’s cup, it is a normal duel.
-    3. If the Active Player hits his own cup, he has to drink it, and then he is Out, unless he is able to flip the cup on the first try.
-    4. If no cup is hit, the next round of the final begins.
+   1. If the Active Player hits the cup in the middle, the Active Player can drink his cup as slowly as he wants, and the other player cannot start drinking until the Active Player is done drinking. After drinking, each player flips, and the last person to flip is Out. The Active Player can start flipping before the other player is done drinking, and therefore has an advantage.
+   2. If the Active Player hits the other player’s cup, it is a normal duel.
+   3. If the Active Player hits his own cup, he has to drink it, and then he is Out, unless he is able to flip the cup on the first try.
+   4. If no cup is hit, the next round of the final begins.
 3. If the two players agreed to allow buy-ins, a buy-in can be performed, and another round of the final can begin.
 
 ## Important rules
@@ -118,7 +139,7 @@ If there is reason to suspect that the player was puking while away from the tab
 
 If no-one throws the ping-pong ball while the player was away from the table, he is allowed to rejoin without any buy-in. This can happen if the group was filling their cups or waiting for someone to buy in while the player was away.
 
- If a player is away from the table for more than a reasonable amount of time, he is Permanently Out, and cannot buy in again.
+If a player is away from the table for more than a reasonable amount of time, he is Permanently Out, and cannot buy in again.
 
 If someone needs to leave the table for important practical reasons, the group can grant them permission to leave. That must happen before the person leaves.
 
